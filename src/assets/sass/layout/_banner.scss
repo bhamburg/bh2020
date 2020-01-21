@@ -22,7 +22,26 @@
 			@include vendor('transform', 'translateY(0)');
 			opacity: 1;
 			margin: 0 0 (_size(element-margin) * 0.65) 0;
-
+			
+			// bh logo styles
+			padding: .3em;
+			transition: background .25s ease-in;
+			border-right: 1px dotted _palette(border);
+			span {
+				color: #ccc;
+				background: -webkit-linear-gradient(#fff, #666);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-family: _font(family-logo);
+				text-transform: initial;
+				letter-spacing: initial;
+				font-weight: normal;
+			}
+			&:hover {
+				background-color: #000;
+				border-color: transparent;
+			}
+			
 			.icon {
 				border-radius: 100%;
 				border: solid 2px _palette(border);
@@ -50,6 +69,10 @@
 			font-size: 2.25em;
 			margin-bottom: _size(element-margin) * 0.4;
 			padding-bottom: _size(element-margin) * 0.2;
+			.small {
+				font-weight: _font(weight-heading-bold);
+				font-size: smaller;
+			}
 		}
 
 		p {
@@ -81,8 +104,8 @@
 			background-size:		auto,
 									cover;
 
-			background-position:	center,
-									center;
+			background-position:	center top,
+									center top;
 
 		 	margin-bottom: (_size(wrapper-edges, large) * -1);
 		}
@@ -111,7 +134,7 @@
 			}
 
 			h2 {
-				font-size: 1.5em;
+				font-size: 1.3em;
 			}
 
 			p {
