@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 
 const Footer = () => (
-  <section id="footer">
+  <section id="contact">
     <div className="inner">
       <h2 className="major">Hit me up</h2>
       <p>

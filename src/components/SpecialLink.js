@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from "gatsby";
 
 // TODO: use proptypes and set a default for to
 const SpecialLink = ({ children, to }) => (

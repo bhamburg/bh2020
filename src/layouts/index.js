@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { StaticQuery, graphql, Link } from "gatsby";
 
 import '../assets/sass/main.scss';
 
@@ -28,8 +28,11 @@ class Layout extends Component {
     this.setState({ isMenuOpen: false });
   };
 
-  render() {
-    const { children, data, location } = this.props;
+  wrapDataInRender = data => {
+    const { children, location } = this.props;
+    const childrenWithProps = React.Children.map(children, (child) =>
+      React.cloneElement(child, { data: data, openMenu: this.openMenu })
+    );
     return (
       <React.Fragment>
         <Helmet
@@ -59,7 +62,7 @@ class Layout extends Component {
             id="page-wrapper"
             onClick={this.state.isMenuOpen ? this.closeMenu : undefined}
           >
-            {children({ ...this.props, openMenu: this.openMenu })}
+            {childrenWithProps}
             <Footer />
           </div>
           <Menu closeMenu={this.closeMenu}>
@@ -73,92 +76,109 @@ class Layout extends Component {
       </React.Fragment>
     );
   }
+
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+        
+            bg: file(name: { eq: "bg" }) {
+              childImageSharp {
+                sizes(quality: 80) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            profilePic: file(name: { eq: "brian-hamburg-profile-photo-DICE2019" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic01: file(name: { eq: "pic01" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic02: file(name: { eq: "pic02" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic03: file(name: { eq: "pic03" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic04: file(name: { eq: "pic04" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic05: file(name: { eq: "pic05" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic06: file(name: { eq: "pic06" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic07: file(name: { eq: "pic07" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            pic08: file(name: { eq: "pic08" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          this.wrapDataInRender(data)
+        )}
+      />
+    );
+  }
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  childrenWithProps: PropTypes.object,
 };
 
 export default Layout;
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
-    pic01: file(name: { eq: "pic01" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic02: file(name: { eq: "pic02" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic03: file(name: { eq: "pic03" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic04: file(name: { eq: "pic04" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic05: file(name: { eq: "pic05" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic06: file(name: { eq: "pic06" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic07: file(name: { eq: "pic07" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    pic08: file(name: { eq: "pic08" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-
-    bg: file(name: { eq: "bg" }) {
-      childImageSharp {
-        sizes(quality: 80) {
-          ...GatsbyImageSharpSizes_withWebp
-        }
-      }
-    }
-  }
-`;

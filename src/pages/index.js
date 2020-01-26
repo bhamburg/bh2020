@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { Link } from "gatsby";
 import Img from 'gatsby-image';
 
 import { debounce } from 'lodash';
 
 import NavigationBar from '../components/NavigationBar';
 import Banner from '../components/Banner';
-import Footer from '../components/Footer';
-
 import Wrapper from '../components/Wrapper';
 import SpotlightWrapper from '../components/SpotlightWrapper';
 import Spotlight from '../components/Spotlight';
@@ -15,19 +13,11 @@ import Content from '../components/Content';
 import FeaturedItems from '../components/FeaturedItems';
 import SpecialLink from '../components/SpecialLink';
 
-import pic01 from '../images/pic01.jpg';
-import pic02 from '../images/pic02.jpg';
-import pic03 from '../images/pic03.jpg';
-
 class IndexPage extends Component {
   state = {
     isScrolled: false,
     isMounted: false,
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   bannerRef = React.createRef();
 
@@ -52,6 +42,7 @@ class IndexPage extends Component {
 
   render() {
     const { data, openMenu } = this.props;
+    console.log('props', this.props)
     return (
       <div className={this.state.isMounted ? '' : 'is-preload'}>
         <NavigationBar
@@ -63,10 +54,10 @@ class IndexPage extends Component {
         <SpotlightWrapper>
           <Spotlight>
             <a href="#" className="image">
-              <Img sizes={data.pic01.childImageSharp.sizes} />
+              <Img sizes={data.profilePic.childImageSharp.sizes} />
             </a>
             <Content>
-              <h2 className="major">Magna arcu feugiat</h2>
+              <h2 className="major">Hello! I'm Brian, from the Internet</h2>
               <p>
                 Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
                 turpis ante, nullam sit amet turpis non, sollicitudin posuere
@@ -74,7 +65,7 @@ class IndexPage extends Component {
                 dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
                 cursus.
               </p>
-              <SpecialLink to="#">Learn more</SpecialLink>
+              <SpecialLink to="#">View my work</SpecialLink>
             </Content>
           </Spotlight>
           <Spotlight>
