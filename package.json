@@ -5,7 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "axios": "^0.19.2",
-    "gatsby": "^2.19.5",
+    "gatsby": "^2.19.12",
     "gatsby-image": "^1.0.55",
     "gatsby-plugin-layout": "^1.1.21",
     "gatsby-plugin-manifest": "^1.0.27",
@@ -13,7 +13,7 @@
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^2.1.27",
-    "gatsby-plugin-sharp": "^2.4.0",
+    "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^1.6.27",
     "lodash": "^4.17.10",
