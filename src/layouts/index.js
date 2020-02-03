@@ -67,10 +67,11 @@ class Layout extends Component {
           </div>
           <Menu closeMenu={this.closeMenu}>
             <Link to="/">Home</Link>
-            <Link to="/generic">Generic</Link>
-            <Link to="/elements">Elements</Link>
-            <Link to="/">Log In</Link>
-            <Link to="/">Sign Up</Link>
+            <Link to="/work">Work</Link>
+            <Link to="/about">About</Link>
+            <Link to="/hobbies">Hobbies</Link>
+            <Link to="/site">Site Info</Link>
+            <Link to="#contact">Contact</Link>
           </Menu>
         </div>
       </React.Fragment>
@@ -104,6 +105,22 @@ class Layout extends Component {
               }
             }
         
+            familyPic: file(name: { eq: "Hamburg-family-beach" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
+            hobbiesPic: file(name: { eq: "hamburg-fan-club-2020" }) {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+        
             pic01: file(name: { eq: "pic01" }) {
               childImageSharp {
                 sizes {
@@ -111,7 +128,7 @@ class Layout extends Component {
                 }
               }
             }
-        
+
             pic02: file(name: { eq: "pic02" }) {
               childImageSharp {
                 sizes {
@@ -119,7 +136,7 @@ class Layout extends Component {
                 }
               }
             }
-        
+            
             pic03: file(name: { eq: "pic03" }) {
               childImageSharp {
                 sizes {

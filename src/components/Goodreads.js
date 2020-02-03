@@ -50,84 +50,111 @@ function Goodreads() {
   },[])
 
   return (
-    <div>
-      <div>
-        <h3>Reading List</h3>
-        {!error ? <div>
-        <h3>Currently Reading</h3>
+    <>
+      <h3 className="major">Reading List</h3>
+      {!error ? <div className="row">
+      <div className="col-12">
+        <h4>Currently Reading</h4>
         {curReadLoading && 
           <span>Loading...</span>
         }
         {!curReadLoading && (
-        <div>
-          {curReading.map((book, i) => {
-            let title = book.elements[1].elements[5].elements[0]['text']
-            let url = book.elements[1].elements[10].elements[0]['text']
-            let imageUrl = book.elements[1].elements[7].elements[0]['text']
-            //let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
-            return (
-              <div key={i}>
-                <div onClick={() => window.open(url)}>
-                  <img
-                    alt={title}
-                    src={imageUrl}
-                    title={title} 
-                  />
-                  <div>
-                    <div>
-                      <h4>
-                        {title}
-                      </h4>
-                      <p>
-                        Author(s)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>)}
-        <h3>Recently Read</h3>
-        {readLoading && 
-          <span>Loading...</span>
-        }
-        {!readLoading && (
-        <div>
-          {read.map((book, i) => {
-            let title = book.elements[1].elements[5].elements[0]['text']
-            let url = book.elements[1].elements[10].elements[0]['text']
-            let imageUrl = book.elements[1].elements[7].elements[0]['text']
-            //let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
-            return (
-              <div key={i}>
-                <div onClick={() => window.open(url)}>
-                <img
-                    alt={title}
-                    src={imageUrl}
-                    title={title} 
-                  />
-                  <div>
-                    <div>
-                      <h4>
-                        {title}
-                      </h4>
-                      <p>
-                        Author(s)
-                      </p>
-                    </div>
-                  </div>
-                </div>           
-              </div>
-            )
-          })}
-        </div>)}
-        <br /><a href="https://www.goodreads.com/review/list/4284038-brian-hamburg">View All Books</a>
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Authors</th>
+                </tr>
+              </thead>
+              <tbody>
+                {curReading.map((book, i) => {
+                  let title = book.elements[1].elements[5].elements[0]['text']
+                  let url = book.elements[1].elements[10].elements[0]['text']
+                  let imageUrl = book.elements[1].elements[7].elements[0]['text']
+                  let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
+                  return (          
+                    <tr key={i} onClick={() => window.open(url)}>
+                      <td style={{
+                        textAlign: 'center', 
+                        width: 50,
+                      }}>
+                        <img 
+                          src={imageUrl}
+                          style={{
+                            verticalAlign: 'text-top',
+                            height: 40,
+                          }}
+                          title={title}
+                          alt={title}
+                        />
+                      </td>
+                      <td style={{verticalAlign: 'middle'}}>{title}</td>
+                      <td>authors</td>
+                    </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
-        : <div>Error loading lists!</div>
-        }
+        <div className="col-12">
+          <h4>Recently Read</h4>
+          {readLoading && 
+            <span>Loading...</span>
+          }
+          {!readLoading && (
+            <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Authors</th>
+                </tr>
+              </thead>
+              <tbody>
+                {read.map((book, i) => {
+                  let title = book.elements[1].elements[5].elements[0]['text']
+                  let url = book.elements[1].elements[10].elements[0]['text']
+                  let imageUrl = book.elements[1].elements[7].elements[0]['text']
+                  let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
+                  return (          
+                    <tr key={i} onClick={() => window.open(url)}>
+                      <td style={{
+                        textAlign: 'center', 
+                        width: 50,
+                      }}>
+                        <img 
+                          src={imageUrl}
+                          style={{
+                            verticalAlign: 'text-top',
+                            height: 40,
+                          }}
+                          title={title}
+                          alt={title}
+                        />
+                      </td>
+                      <td style={{verticalAlign: 'middle'}}>{title}</td>
+                      <td>authors</td>
+                    </tr>
+                    )
+                })}
+              </tbody>
+            </table>
+          </div>)}
+        </div>
       </div>
-    </div>
+      : <div>
+          <p>Error loading lists!</p>
+        </div>
+      }
+      <p>
+        <a href="https://www.goodreads.com/review/list/4284038-brian-hamburg">View My Goodreads Profile</a>
+      </p>
+    </>
   )
 }
 

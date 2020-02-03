@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 const Copyright = ({ children }) => (
   <ul className="copyright">
-    <li>&copy; {new Date().getFullYear()} Untitled Inc. All rights reserved.</li>
-    <li>
-      Design: <a href="http://html5up.net">HTML5 UP</a>
-    </li>
+    <li>&copy; {new Date().getFullYear()} Brian Hamburg. All rights reserved.</li>
+    <li><Link to="/site">Site Info</Link></li>
   </ul>
 );
 

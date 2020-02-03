@@ -42,7 +42,6 @@ class IndexPage extends Component {
 
   render() {
     const { data, openMenu } = this.props;
-    console.log('props', this.props)
     return (
       <div className={this.state.isMounted ? '' : 'is-preload'}>
         <NavigationBar
@@ -53,57 +52,49 @@ class IndexPage extends Component {
         <Banner siteTitle={data.site.siteMetadata.title} ref={this.bannerRef} />
         <SpotlightWrapper>
           <Spotlight>
-            <a href="#" className="image">
+            <a href="/work" className="image">
               <Img sizes={data.profilePic.childImageSharp.sizes} />
             </a>
             <Content>
               <h2 className="major">Hello! I'm Brian, from the Internet</h2>
               <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
+                With over 15 years of professional experience building and 
+                supporting websites and applications, I've dedicated my career 
+                to the pursuit of removing friction from using the Web.
               </p>
-              <SpecialLink to="#">View my work</SpecialLink>
+              <SpecialLink to="/work">View my work</SpecialLink>
             </Content>
           </Spotlight>
           <Spotlight>
-            <a href="#" className="image">
-              <Img sizes={data.pic02.childImageSharp.sizes} />
+            <a href="/about" className="image">
+              <Img sizes={data.familyPic.childImageSharp.sizes} />
             </a>
             <Content>
-              <h2 className="major">Tempus adipiscing</h2>
+              <h2 className="major">Who is this Hamburg character anyway?</h2>
               <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
+              Father of twins. Strummer of strings. Implementer of interfaces. Purveyor of pixels.
               </p>
-              <SpecialLink to="#">Learn more</SpecialLink>
+              <SpecialLink to="/about">Learn more about me</SpecialLink>
             </Content>
           </Spotlight>
 
           <Spotlight>
-            <a href="#" className="image">
-              <Img sizes={data.pic03.childImageSharp.sizes} />
+            <a href="/hobbies" className="image">
+              <Img sizes={data.hobbiesPic.childImageSharp.sizes} />
             </a>
             <Content>
-              <h2 className="major">Nullam dignissim</h2>
+              <h2 className="major">Random acts of nerdery</h2>
               <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
+                Playing banjo for over 20 years is just the tip of the Hamburg iceberg. 
+                I'm also a retro gaming enthusiast, avid science and philosphy reader, and 
+                slightly less-avid runner.
               </p>
-              <SpecialLink to="#">Learn more</SpecialLink>
+              <SpecialLink to="#">Check out my hobbies</SpecialLink>
             </Content>
           </Spotlight>
         </SpotlightWrapper>
         <Wrapper className="alt style1">
-          <h2 className="major">Vitae phasellus</h2>
+          <h2 className="major">Latest posts</h2>
           <p>
             Cras mattis ante fermentum, malesuada neque vitae, eleifend erat.
             Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis

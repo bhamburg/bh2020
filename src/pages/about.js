@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from "gatsby";
+import Img from 'gatsby-image';
 
 import Header from '../components/Header';
 import PageWrapper from '../components/PageWrapper';
 import Wrapper from '../components/Wrapper';
+import FeaturedItems from '../components/FeaturedItems';
 import SpecialLink from '../components/SpecialLink';
 
-const NotFoundPage = ({ data }) => (
+const Generic = ({ data }) => (
   <PageWrapper>
     <Header>
-      <h2>Page Not Found</h2>
-      <p>Not all who wander are lost, but you appear to be</p>
+      <h2>About Brian</h2>
+      <p>Nerdy kid from the Philly burbs grew up to embrace his nerdiness</p>
     </Header>
+
     <Wrapper>
-      <Link to="/" className="button large fit primary icon fa-home">
-        Go to homepage
-      </Link>
+      About
     </Wrapper>
   </PageWrapper>
 );
 
-export default NotFoundPage;
+export default Generic;

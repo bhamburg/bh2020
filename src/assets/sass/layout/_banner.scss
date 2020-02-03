@@ -27,6 +27,7 @@
 			padding: .3em;
 			transition: background .25s ease-in;
 			border-right: 1px dotted _palette(border);
+			cursor: pointer;
 			span {
 				color: #ccc;
 				background: -webkit-linear-gradient(#fff, #666);
@@ -67,11 +68,14 @@
 			opacity: 1;
 			border-bottom: solid 2px _palette(border);
 			font-size: 2.25em;
-			margin-bottom: _size(element-margin) * 0.4;
+			margin-bottom: _size(element-margin) * 0.3;
 			padding-bottom: _size(element-margin) * 0.2;
 			.small {
 				font-weight: _font(weight-heading-bold);
 				font-size: smaller;
+			}
+			span.typed {
+				font-weight: inherit;
 			}
 		}
 
@@ -134,7 +138,7 @@
 			}
 
 			h2 {
-				font-size: 1.3em;
+				font-size: 1.1em;
 			}
 
 			p {

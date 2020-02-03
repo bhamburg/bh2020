@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Brian Hamburg',
+    siteUrl: `https://bhamburg.com`,
+    description: `Web Developer, Designer, and Musician in Philadelphia`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

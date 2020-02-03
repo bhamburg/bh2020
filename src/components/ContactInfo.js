@@ -3,24 +3,22 @@ import React from 'react';
 const ContactInfo = () => (
   <ul className="contact">
     <li className="fa-home">
-      Untitled Inc
-      <br />
-      1234 Somewhere Road Suite #2894
-      <br />
-      Nashville, TN 00000-0000
-    </li>
-    <li className="fa-phone">(000) 000-0000</li>
-    <li className="fa-envelope">
-      <a href="#">information@untitled.tld</a>
+      Philadelphia, PA, USA
     </li>
     <li className="fa-twitter">
-      <a href="#">twitter.com/untitled-tld</a>
-    </li>
-    <li className="fa-facebook">
-      <a href="#">facebook.com/untitled-tld</a>
+      <a href="https://twitter.com/burgbits" target="_blank">twitter.com/burgbits</a>
     </li>
     <li className="fa-instagram">
-      <a href="#">instagram.com/untitled-tld</a>
+      <a href="https://www.instagram.com/burgbits" target="_blank">instagram.com/burgbits</a>
+    </li>
+    <li className="fa-gitlab">
+      <a href="https://gitlab.com/bhamburg" target="_blank">gitlab.com/bhamburg</a>
+    </li>
+    <li className="fa-github">
+      <a href="https://github.com/bhamburg" target="_blank">github.com/bhamburg</a>
+    </li>
+    <li className="fa-envelope">
+      <a href="mailto:bhamburg@gmail.com">bhamburg@gmail.com</a>
     </li>
   </ul>
 );
