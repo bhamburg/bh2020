@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "gatsby";
 import Img from 'gatsby-image';
 
 import { debounce } from 'lodash';
@@ -89,7 +88,7 @@ class IndexPage extends Component {
                 I'm also a retro gaming enthusiast, avid science and philosphy reader, and 
                 slightly less-avid runner.
               </p>
-              <SpecialLink to="#">Check out my hobbies</SpecialLink>
+              <SpecialLink to="/hobbies">Check out my hobbies</SpecialLink>
             </Content>
           </Spotlight>
         </SpotlightWrapper>

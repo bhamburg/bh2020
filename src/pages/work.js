@@ -76,7 +76,7 @@ const Generic = ({ data }) => (
         compatibility, as well as building in affordances for users of all abilities.
       </p>
 
-      <button class="button large fit icon fa-download">Download My R&eacute;sum&eacute;</button>
+      <button className="button large fit icon fa-download">Download My R&eacute;sum&eacute;</button>
 
     </Wrapper>
   </PageWrapper>

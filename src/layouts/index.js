@@ -71,7 +71,7 @@ class Layout extends Component {
             <Link to="/about">About</Link>
             <Link to="/hobbies">Hobbies</Link>
             <Link to="/site">Site Info</Link>
-            <Link to="#contact">Contact</Link>
+            <Link to="/#contact">Contact</Link>
           </Menu>
         </div>
       </React.Fragment>
@@ -89,7 +89,7 @@ class Layout extends Component {
               }
             }
         
-            bg: file(name: { eq: "bg" }) {
+            philly1927: file(name: { eq: "philly1927" }) {
               childImageSharp {
                 sizes(quality: 80) {
                   ...GatsbyImageSharpSizes_withWebp

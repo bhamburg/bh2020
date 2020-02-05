@@ -467,7 +467,7 @@ while (!deck.isInOrder()) {
           <div className="row gtr-uniform">
             <div className="col-12">
               <span className="image fit">
-                <Img sizes={data.bg.childImageSharp.sizes} />
+                <Img sizes={data.pic04.childImageSharp.sizes} />
               </span>
             </div>
             <div className="col-4">
