@@ -1,34 +1,34 @@
 /*
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License - {@link http://opensource.org/licenses/mit-license.php}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- MIT License {@link http://creativecommons.org/licenses/MIT/}
- @example Visit {@link http://balupton.com/projects/jquery-lightbox} for more information.
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License - {@link //opensource.org/licenses/mit-license.php}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ MIT License {@link //creativecommons.org/licenses/MIT/}
+ @example Visit {@link //balupton.com/projects/jquery-lightbox} for more information.
 */
 (function(b){if("object"!==typeof window.console||"undefined"===typeof window.console.emulated)"object"!==typeof window.console||!("function"===typeof window.console.log||"object"===typeof window.console.log)?(window.console={},window.console.log=window.console.debug=window.console.warn=window.console.trace=function(){},window.console.error=function(){for(var a="An error has occured. More information will be available in the console log.",b=0;b<arguments.length&&"string"===typeof arguments[b];++b)a+=
 "\n"+arguments[b];if("undefined"!==typeof Error)throw Error(a);throw a;}):("undefined"===typeof window.console.debug&&(window.console.debug=function(){for(var a=["console.debug:"],b=0;b<arguments.length;b++)a.push(arguments[b]);window.console.log.apply(window.console,a)}),"undefined"===typeof window.console.warn&&(window.console.warn=function(){for(var a=["console.warn:"],b=0;b<arguments.length;b++)a.push(arguments[b]);window.console.log.apply(window.console,a)}),"undefined"===typeof window.console.error&&
@@ -43,7 +43,7 @@ function(a,c,d){var e=b(this);d?e.bind(a,c,d):e.bind(a,c);return e};b.fn.lastcli
 this;c.call(e);var f=b(e);f.data("lastclick-clicks",(f.data("lastclick-clicks")||0)+1);var g=setTimeout(function(){var h=f.data("lastclick-clicks");c.apply(e,[a]);f.data("lastclick-clicks",0);a.type="lastclick";a.isPropagationStopped=function(){return!1};b.event.handle.apply(e,[a,h])},300);f.data("lastclick-timeout",g)}).apply(this,[a])}};b.fn.preventDefault=b.fn.preventDefault||function(){return b(this).click(function(a){a.preventDefault();return!1})};b.LightboxClass=function(){this.construct()};
 b.fn.lightbox=function(a){b.Lightbox=b.Lightbox||new b.LightboxClass;if(b.Lightbox.ie6&&!b.Lightbox.ie6_support)return this;a=b.extend({start:!1,events:!0},a);var c=b(this);a.events&&(c.preventDefault().once("lastclick",function(a){var e=b(this),e=c.index(e);if(!b.Lightbox.init(e,c)||!b.Lightbox.start())return!1;a.preventDefault();return!1}),c.addClass("lightbox-enabled"));if(a.start){b(this);if(!b.Lightbox.init(0,c))return this;b.Lightbox.start()}return this};b.extend(b.LightboxClass.prototype,{images:[],
 constructed:!1,compressed:null,src:null,baseurl:null,files:{compressed:{scripts:{lightbox:"scripts/jquery.lightbox.min.js",colorBlend:"scripts/jquery.color.min.js"},styles:{lightbox:"styles/jquery.lightbox.min.css"}},uncompressed:{scripts:{lightbox:"scripts/jquery.lightbox.js",colorBlend:"scripts/jquery.color.js"},styles:{lightbox:"styles/jquery.lightbox.css"}},images:{prev:"images/prev.gif",next:"images/next.gif",blank:"images/blank.gif",loading:"images/loading.gif"}},text:{image:"Image",of:"of",
-close:"Close X",closeInfo:"You can also click anywhere outside the image to close.",download:"Download.",help:{close:"Click to close",interact:"Hover to interact"},about:{text:"jQuery Lightbox Plugin (balupton edition)",title:"Licenced under the GNU Affero General Public License.",link:"http://balupton.com/projects/jquery-lightbox"}},keys:{close:"c",prev:"p",next:"n"},handlers:{show:null},opacity:0.9,padding:null,speed:400,rel:"lightbox",auto_relify:!0,auto_scroll:"follow",auto_resize:!0,ie6:null,
+close:"Close X",closeInfo:"You can also click anywhere outside the image to close.",download:"Download.",help:{close:"Click to close",interact:"Hover to interact"},about:{text:"jQuery Lightbox Plugin (balupton edition)",title:"Licenced under the GNU Affero General Public License.",link:"//balupton.com/projects/jquery-lightbox"}},keys:{close:"c",prev:"p",next:"n"},handlers:{show:null},opacity:0.9,padding:null,speed:400,rel:"lightbox",auto_relify:!0,auto_scroll:"follow",auto_resize:!0,ie6:null,
 ie6_support:!0,colorBlend:null,download_link:!0,show_helper_text:!0,show_linkback:!0,show_info:"auto",show_extended_info:"auto",options:"show_helper_text auto_scroll auto_resize download_link show_info show_extended_info ie6_support colorBlend baseurl files text show_linkback keys opacity padding speed rel auto_relify".split(" "),construct:function(a){var c="undefined"===typeof this.constructed||!1===this.constructed;this.constructed=!0;var d=c;a=a||{};var e=function(a,b){if("object"===typeof a)for(var c in a)a[c]=
 e(a[c],b);else if("array"===typeof b){c=0;for(var d=a.length;c<d;++c)a[c]=e(a[c],b)}else a=b+a;return a};if(c&&"undefined"===typeof a.files){this.compressed=null;var f=b('script[src*="'+this.files.compressed.scripts.lightbox+'"]:first');0!==f.length?(b.extend(!0,this.files,this.files.compressed),this.compressed=!0):(f=b('script[src*="'+this.files.uncompressed.scripts.lightbox+'"]:first'),0!==f.length&&(b.extend(!0,this.files,this.files.uncompressed),this.compressed=!1));null===this.compressed?(window.console.error("Lightbox was not able to find it's javascript script tag necessary for auto-inclusion."),
 d=!1):(this.src=f.prop("src"),this.baseurl=this.src.substring(0,this.src.indexOf(this.files.scripts.lightbox)),this.files=e(this.files,this.baseurl),a=b.extend(a,this.src.queryStringToJSON()));this.images.image={src:"",title:"Untitled",description:"",name:"",color:null,width:null,height:null,id:null,image:!0};this.images.prepare=function(a){var c=b.extend({},this.image);a.tagName?(a=b(a),a.prop("src")||a.prop("href")?(c.src=a.prop("src")||a.prop("href"),c.title=a.prop("title")||a.prop("alt")||c.title,

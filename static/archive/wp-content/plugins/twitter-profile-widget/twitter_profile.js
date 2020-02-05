@@ -11,8 +11,8 @@ var twitterProfileUpdate = function(data) {
 				if(!text)
 					return text;
 				text = text.replace( /(https?:\/\/[a-zA-Z0-9.\/%#\?]+)/, '<a href="$1" target="_blank">$1</a>' );
-				text = text.replace( /@([a-zA-Z0-9_]+)/, '<a href="http://twitter.com/$1" target="_blank">@$1</a>' );
-				return text.replace( /#([^\s^　]+)/, '<a href="http://twitter.com/#search?q=$1" target="_blank">#$1</a>' );
+				text = text.replace( /@([a-zA-Z0-9_]+)/, '<a href="//twitter.com/$1" target="_blank">@$1</a>' );
+				return text.replace( /#([^\s^　]+)/, '<a href="//twitter.com/#search?q=$1" target="_blank">#$1</a>' );
 			};
 			this.numberFormat = function(number) {
 				return number?number.toString().replace( /([0-9]+?)(?=(?:[0-9]{3})+$)/g , '$1,' ):'';
