@@ -99,7 +99,7 @@ class Layout extends Component {
         
             profilePic: file(name: { eq: "brian-hamburg-profile-photo-DICE2019" }) {
               childImageSharp {
-                sizes {
+                sizes(quality: 100) {
                   ...GatsbyImageSharpSizes_withWebp
                 }
               }
