@@ -84,7 +84,7 @@ class IndexPage extends Component {
             <Content>
               <h2 className="major">Random acts of nerdery</h2>
               <p>
-                Playing banjo for over 20 years is just the tip of the Hamburg iceberg. 
+                Playing four-string banjo is just the tip of the Hamburg iceberg. 
                 I'm also a retro gaming enthusiast, avid science and philosphy reader, and 
                 slightly less-avid runner.
               </p>

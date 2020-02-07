@@ -21,7 +21,6 @@ function Goodreads() {
         let xml = res.data
         let parsedJSON = JSON.parse(convert.xml2json(xml))
         let books = parsedJSON.elements[0].elements[2].elements
-        console.dir(books)
         setCurReadLoading(false)
         setCurReading(books)
       })
@@ -38,7 +37,6 @@ function Goodreads() {
         let xml = res.data
         let parsedJSON = JSON.parse(convert.xml2json(xml))
         let books = parsedJSON.elements[0].elements[2].elements
-        console.dir(books)
         setReadLoading(false)
         setRead(books)
       })
@@ -65,7 +63,7 @@ function Goodreads() {
                 <tr>
                   <th>Cover</th>
                   <th>Title</th>
-                  <th>Authors</th>
+                  <th>Author(s)</th>
                 </tr>
               </thead>
               <tbody>
@@ -73,7 +71,7 @@ function Goodreads() {
                   let title = book.elements[1].elements[5].elements[0]['text']
                   let url = book.elements[1].elements[10].elements[0]['text']
                   let imageUrl = book.elements[1].elements[7].elements[0]['text']
-                  let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
+                  let authors = book.elements[1].elements[21].elements[0].elements[1].elements[0]['text']
                   return (          
                     <tr key={i} onClick={() => window.open(url)}>
                       <td style={{
@@ -91,7 +89,7 @@ function Goodreads() {
                         />
                       </td>
                       <td style={{verticalAlign: 'middle'}}>{title}</td>
-                      <td>authors</td>
+                      <td style={{ width: '30%' }}>{authors}</td>
                     </tr>
                     )
                   })}
@@ -112,7 +110,7 @@ function Goodreads() {
                 <tr>
                   <th>Cover</th>
                   <th>Title</th>
-                  <th>Authors</th>
+                  <th>Author(s)</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,7 +118,7 @@ function Goodreads() {
                   let title = book.elements[1].elements[5].elements[0]['text']
                   let url = book.elements[1].elements[10].elements[0]['text']
                   let imageUrl = book.elements[1].elements[7].elements[0]['text']
-                  let authors = book.elements[1].elements[20].elements ? book.elements[1].elements[20].elements[0]['text'] : "(no description)"
+                  let authors = book.elements[1].elements[21].elements[0].elements[1].elements[0]['text']
                   return (          
                     <tr key={i} onClick={() => window.open(url)}>
                       <td style={{
@@ -138,7 +136,7 @@ function Goodreads() {
                         />
                       </td>
                       <td style={{verticalAlign: 'middle'}}>{title}</td>
-                      <td>authors</td>
+                      <td style={{ width: '30%' }}>{authors}</td>
                     </tr>
                     )
                 })}
@@ -152,7 +150,7 @@ function Goodreads() {
         </div>
       }
       <p>
-        <a href="https://www.goodreads.com/review/list/4284038-brian-hamburg">View My Goodreads Profile</a>
+        <a href="https://www.goodreads.com/review/list/4284038-brian-hamburg"  rel="noopener noreferrer" target="_blank">View My Goodreads Profile</a>
       </p>
     </>
   )
