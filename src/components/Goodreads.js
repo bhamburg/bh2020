@@ -88,8 +88,8 @@ function Goodreads() {
                           alt={title}
                         />
                       </td>
-                      <td style={{verticalAlign: 'text-top'}}>{title}</td>
-                      <td style={{ width: '30%' }}>{authors}</td>
+                      <td style={{verticalAlign: 'middle'}}>{title}</td>
+                      <td style={{ width: '30%', verticalAlign: 'middle' }}>{authors}</td>
                     </tr>
                     )
                   })}
@@ -135,8 +135,8 @@ function Goodreads() {
                           alt={title}
                         />
                       </td>
-                      <td style={{verticalAlign: 'text-top'}}>{title}</td>
-                      <td style={{ width: '30%' }}>{authors}</td>
+                      <td style={{verticalAlign: 'middle'}}>{title}</td>
+                      <td style={{ width: '30%', verticalAlign: 'middle' }}>{authors}</td>
                     </tr>
                     )
                 })}

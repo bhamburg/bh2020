@@ -91,7 +91,7 @@ class Layout extends Component {
         
             philly1927: file(name: { eq: "philly1927" }) {
               childImageSharp {
-                sizes(quality: 80) {
+                sizes(quality: 90) {
                   ...GatsbyImageSharpSizes_withWebp
                 }
               }
