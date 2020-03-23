@@ -49,7 +49,6 @@ function Goodreads() {
 
   return (
     <>
-      <h3 className="major">Reading List</h3>
       {!error ? <div className="row">
       <div className="col-12">
         <h4>Currently Reading</h4>
@@ -73,19 +72,24 @@ function Goodreads() {
                   let imageUrl = book.elements[1].elements[7].elements[0]['text']
                   let authors = book.elements[1].elements[21].elements[0].elements[1].elements[0]['text']
                   return (          
-                    <tr key={i} onClick={() => window.open(url)}>
+                    <tr key={i} 
+                      onClick={() => window.open(url)}
+                      style={{
+                        cursor: 'pointer'
+                      }}
+                      title={`${title} by ${authors}`}
+                    >
                       <td style={{
-                        textAlign: 'center', 
-                        width: 50,
-                      }}>
+                          textAlign: 'center', 
+                          width: 50,
+                        }}>
                         <img 
                           src={imageUrl}
                           style={{
                             verticalAlign: 'text-top',
                             height: 40,
                           }}
-                          title={title}
-                          alt={title}
+                          alt={`${title} by ${authors}`}
                         />
                       </td>
                       <td style={{verticalAlign: 'middle'}}>{title}</td>
@@ -120,7 +124,13 @@ function Goodreads() {
                   let imageUrl = book.elements[1].elements[7].elements[0]['text']
                   let authors = book.elements[1].elements[21].elements[0].elements[1].elements[0]['text']
                   return (          
-                    <tr key={i} onClick={() => window.open(url)}>
+                    <tr key={i} 
+                      onClick={() => window.open(url)}
+                      style={{
+                        cursor: 'pointer'
+                      }}
+                      title={`${title} by ${authors}`}
+                    >
                       <td style={{
                         textAlign: 'center', 
                         width: 50,
@@ -131,8 +141,7 @@ function Goodreads() {
                             verticalAlign: 'text-top',
                             height: 40,
                           }}
-                          title={title}
-                          alt={title}
+                          alt={`${title} by ${authors}`}
                         />
                       </td>
                       <td style={{verticalAlign: 'middle'}}>{title}</td>
