@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import convert from "xml-js";
+import Moment from 'react-moment'
 
 const PROXY = "https://cors-anywhere.herokuapp.com/";
 const APIKEY = "WtRxj0qGSLZH6RXaR3BRg";
@@ -37,6 +38,7 @@ function Goodreads() {
         let xml = res.data
         let parsedJSON = JSON.parse(convert.xml2json(xml))
         let books = parsedJSON.elements[0].elements[2].elements
+        console.dir(books)
         setReadLoading(false)
         setRead(books)
       })
@@ -112,9 +114,10 @@ function Goodreads() {
             <table>
               <thead>
                 <tr>
-                  <th>Cover</th>
+                  <th style={{textAlign: 'center'}}>Cover</th>
                   <th>Title</th>
                   <th>Author(s)</th>
+                  <th style={{textAlign: 'center'}}>Date Read</th>
                 </tr>
               </thead>
               <tbody>
@@ -123,6 +126,10 @@ function Goodreads() {
                   let url = book.elements[1].elements[10].elements[0]['text']
                   let imageUrl = book.elements[1].elements[7].elements[0]['text']
                   let authors = book.elements[1].elements[21].elements[0].elements[1].elements[0]['text']
+                  let dateRead = null
+                  if (book.elements[10] && book.elements[10].elements && book.elements[10].elements[0]['text']) {
+                    dateRead = book.elements[10].elements[0]['text']
+                  }
                   return (          
                     <tr key={i} 
                       onClick={() => window.open(url)}
@@ -145,7 +152,14 @@ function Goodreads() {
                         />
                       </td>
                       <td style={{verticalAlign: 'middle'}}>{title}</td>
-                      <td style={{ width: '30%', verticalAlign: 'middle' }}>{authors}</td>
+                      <td style={{ width: '20%', verticalAlign: 'middle' }}>{authors}</td>
+                      <td style={{ width: '10%', verticalAlign: 'middle', textAlign: 'center' }}>
+                        {dateRead && 
+                          (<Moment format="MMM YYYY">
+                            {dateRead}
+                          </Moment>)
+                        }
+                      </td>
                     </tr>
                     )
                 })}
