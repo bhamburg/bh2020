@@ -55,7 +55,7 @@ class IndexPage extends Component {
               <Img sizes={data.profilePic.childImageSharp.sizes} />
             </a>
             <Content>
-              <h2 className="major">Hello! I'm Brian, from the Internet</h2>
+              <h2 className="major">Hi! I'm Brian</h2>
               <p>
                 With over 15 years of professional experience building and 
                 supporting websites and applications, I've dedicated my career 

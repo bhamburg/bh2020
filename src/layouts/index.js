@@ -70,7 +70,7 @@ class Layout extends Component {
             <Link to="/work">Work</Link>
             <Link to="/about">About</Link>
             <Link to="/hobbies">Hobbies</Link>
-            <Link to="/site">Site Info</Link>
+            <Link to="/uses">/uses</Link>
             <Link to="/#contact">Contact</Link>
           </Menu>
         </div>
