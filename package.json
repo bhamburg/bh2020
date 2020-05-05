@@ -15,7 +15,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.14",
     "lodash": "^4.17.10",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-flip-toolkit": "^7.0.7",
